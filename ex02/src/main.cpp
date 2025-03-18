@@ -6,24 +6,117 @@
 /*   By: okapshai <okapshai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 12:26:03 by okapshai          #+#    #+#             */
-/*   Updated: 2025/03/18 14:41:44 by okapshai         ###   ########.fr       */
+/*   Updated: 2025/03/18 19:10:29 by okapshai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Iter.hpp"
+#include <iostream>
+#include "Array.hpp"
 
-int main(void) {
-    int tab[] = {1, 2, 33, 44};
+#define MAX_VAL 750
 
-    ::iter(tab, 4, print);
+int main(void)
+{
+    Array<int> numbers(MAX_VAL);
+    int* mirror = new int[MAX_VAL];
+    srand(time(NULL));
+    for (int i = 0; i < MAX_VAL; i++)
+    {
+        const int value = rand() % 10;
+        numbers[i] = value;
+        mirror[i] = value;
+    }
 
-    std::string names[] = {
-        "riri",
-        "fifi",
-        "loulou"
-    };
+    //Test max value Array vs int[]
+    // for (int i = 0; i < MAX_VAL; i++)
+    // {
+    //     std::cout << "Numbers:"<< numbers[i] << std::endl;
+    //     std::cout << "Mirror:"<< mirror[i] << std::endl;
+    // }
+
+    //Scope Deep Copy test
+    std::cout << "\n------------------------------> Deep Copy tests" << std::endl;
+
+    {
+
+        std::cout << "\nOperator overload =" << std::endl;
+
+        Array<int> toCopy(10);
+
+        for (unsigned int i = 0; i < toCopy.size(); i++) {
+            toCopy[i] = i;
+        }
+
+        Array<int> copy = toCopy;
+
+        std::cout << "\nDisplay both arrays" << std::endl;
+		
+        for (unsigned int i = 0; i < toCopy.size(); i++) {
+            std::cout << "toCopy[" << i << "]: " << toCopy[i] << std::endl;
+            std::cout << "  copy[" << i << "]: " << copy[i] << std::endl;
+            std::cout << "\n";
+        }
+
+        std::cout << "\nModify \"copy\", shouldn't modify \"toCopy\"" << std::endl;
+        for (unsigned int i = 0; i < toCopy.size(); i++) {
+            copy[i] = 10 - i;
+        }
+
+        std::cout << "\"copy\" has been modified, print both arrays\n" << std::endl;
+        for (unsigned int i = 0; i < toCopy.size(); i++) {
+            std::cout << "toCopy[" << i << "]: " << toCopy[i] << std::endl;
+            std::cout << "  copy[" << i << "]: " << copy[i] << std::endl;
+            std::cout << "\n";
+        }
+
+		std::cout << "\n";
+        std::cout << "----------------> Copy through constructor test\n" << std::endl;
+
+        Array<int> copy2(copy);
+
+        for (unsigned int i = 0; i < copy.size(); i++) {
+            std::cout << " copy[" << i << "]: " << copy[i] << std::endl;
+            std::cout << "copy2[" << i << "]: " << copy2[i] << std::endl;
+		    std::cout << "\n";
+        }
+
+        std::cout << "\nModify \"copy2\", shouldn't modify \"copy\"" << std::endl;
+
+        for (unsigned int i = 0; i < toCopy.size(); i++) {
+            copy2[i] = i;
+        }
+
+        std::cout << "\"copy2\" has been modified, print both arrays\n" << std::endl;
+
+        for (unsigned int i = 0; i < copy.size(); i++) {
+            std::cout << " copy[" << i << "]: " << copy[i] << std::endl;
+            std::cout << "copy2[" << i << "]: " << copy2[i] << std::endl;
+		    std::cout << "\n";
+        }
+    }
+
+    for (int i = 0; i < MAX_VAL; i++) {
+        if (mirror[i] != numbers[i]) {
+            std::cerr << "didn't save the same value!!" << std::endl;
+            return 1;
+        }
+    }
     
-    ::iter(names, 3, print);
-    
-    return (0);
+	std::cout << "\n";
+    std::cout << "Quelques tests de l'index out of bound" << std::endl;
+
+    try {
+        numbers[-2] = 0;
+	} catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+    }
+
+    try {
+        numbers[MAX_VAL] = 0;
+    } catch(const std::exception& e) {
+        std::cerr << e.what() << '\n';
+    }
+
+    delete [] mirror;//
+    return 0;
 }
