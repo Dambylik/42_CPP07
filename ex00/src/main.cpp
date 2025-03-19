@@ -6,7 +6,7 @@
 /*   By: okapshai <okapshai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 12:26:03 by okapshai          #+#    #+#             */
-/*   Updated: 2025/03/18 14:34:11 by okapshai         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:43:01 by okapshai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,40 +35,58 @@ int main( void ) {
 
 // int main( void ) {
 
-//     int a = 42;
-//     int b = 4242;
+//     int a               = 42;
+//     int b               = 4242;
+//     float c             = -1.7f;
+//     float d             = 4.2f;
+//     std::string str1    = "Olaf";
+//     std::string str2    = "Donald";
+//     char char1          = 'a';
+//     char char2          = 'z';
 
-// 	std::cout << YELLOW << "\nWhith int's :" << RESET << std::endl;
+// 	std::cout << YELLOW << "\n------------SWAP------------\n" << RESET << std::endl;
+    
+//     std::cout << "Before swap:" << std::endl;
+    
+//     std::cout << "a = " << YELLOW << a << RESET
+//                 << "\nb = " << YELLOW << b << RESET 
+//                     << "\nc = " << YELLOW << c << RESET 
+//                         << "\nd = " << YELLOW << d << RESET
+//                             << "\nstr1 = " << YELLOW << str1 << RESET 
+//                                 << "\nstr2 = " << YELLOW << str2 << RESET
+//                                     << "\nchar1 = " << YELLOW << char1 << RESET 
+//                                         << "\nchar2 = " << YELLOW << char2 << RESET << std::endl;
 
-//     std::cout << "int a before swap = " << YELLOW << a << RESET
-// 			  << "\nint b before swap = " << YELLOW << b << RESET
-// 			  << "\n" << std::endl;
+//     ::swap<int>( a, b );
+//     ::swap<float>( c, d );
+//     ::swap<std::string>(str1, str2);
+//     ::swap<char>( char1, char2);
 
-//     swap( a, b );
+//     std::cout << "\nAfter swap:" << std::endl;
 
-//     std::cout << "int a after swap = " << YELLOW << a << RESET
-// 			  << "\nint b after swap = " << YELLOW << b << RESET
-// 			  << "\n" << std::endl;
+//     std::cout << "a = " << YELLOW << a << RESET
+//                 << "\nb = " << YELLOW << b << RESET 
+//                     << "\nc = " << YELLOW << c << RESET 
+//                         << "\nd = " << YELLOW << d << RESET
+//                             << "\nstr1 = " << YELLOW << str1 << RESET 
+//                                 << "\nstr2 = " << YELLOW << str2 << RESET
+//                                     << "\nchar1 = " << YELLOW << char1 << RESET 
+//                                         << "\nchar2 = " << YELLOW << char2 << RESET << std::endl;
 
-//     std::cout << "min( a, b ) = " << YELLOW << min( a, b ) << RESET << std::endl;
-//     std::cout << "max( a, b ) = " << YELLOW << max( a, b ) << RESET << std::endl;
 
-//     std::string A = "Olaf";
-//     std::string B = "Donald";
+//     std::cout << YELLOW << "\n------------MIN------------\n" << RESET << std::endl;
+    
+//     std::cout << "min( a, b ) = " << YELLOW << ::min<int>( a, b ) << RESET << std::endl;
+//     std::cout << "min( c, d ) = " << YELLOW << ::min<float>( c, d ) << RESET << std::endl;
+//     std::cout << "min( str1, str2 ) = " << YELLOW << ::min<std::string>( str1, str2 ) << RESET << std::endl;
+//     std::cout << "min( char1, char2 ) = " << YELLOW << ::min<char>( char1, char2 ) << RESET << std::endl;
 
-// 	std::cout << LGREEN << "\n\nWhith strings :" << RESET << std::endl;
+//     std::cout << YELLOW << "\n------------MAX------------\n" << RESET << std::endl;
+    
+//     std::cout << "max( a, b ) = " << YELLOW << ::max<int>( a, b ) << RESET << std::endl;
+//     std::cout << "max( a, b ) = " << YELLOW << ::max<float>( c, d ) << RESET << std::endl;
+//     std::cout << "max( str1, str2 ) = " << YELLOW << ::max<std::string>( str1, str2 ) << RESET << std::endl;
+//     std::cout << "max( char1, char2 ) = " << YELLOW << ::max<char>( char1, char2 ) << RESET << std::endl;
 
-//     std::cout << "string A before swap = " << LGREEN << A << RESET
-// 			  << "\nstring B before swap = " << LGREEN << B << RESET
-// 			  << "\n" << std::endl;
-
-//     swap(A, B);
-
-//     std::cout << "string A after swap = " << LGREEN << A << RESET
-// 			  << "\nstring B after swap = " << LGREEN << B << RESET
-// 			  << "\n" << std::endl;
-
-//     std::cout << "min( A, B ) = " << LBLUE << min( A, B ) << RESET << std::endl;
-//     std::cout << "max( A, B ) = " << LBLUE << max( A, B ) << RESET << std::endl;
 //     return 0;
 // }

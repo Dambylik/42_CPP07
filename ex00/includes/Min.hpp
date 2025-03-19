@@ -6,15 +6,15 @@
 /*   By: okapshai <okapshai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 14:23:25 by okapshai          #+#    #+#             */
-/*   Updated: 2025/03/18 14:26:10 by okapshai         ###   ########.fr       */
+/*   Updated: 2025/03/19 11:56:48 by okapshai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
+template < typename T >
 
-T & min(T & a, T & b) {
+T const & min( T const & a, T const & b ) {
 	
-	return a < b ? a : b;
+	return (a < b ? a : b);
 }

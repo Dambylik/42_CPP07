@@ -6,17 +6,17 @@
 /*   By: okapshai <okapshai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 14:22:42 by okapshai          #+#    #+#             */
-/*   Updated: 2025/03/18 14:23:12 by okapshai         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:32:20 by okapshai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template <typename T>
+template < typename T >
 
 void swap(T & a, T & b) {
 	
-    T tmp = a;
+    T temp = a;
 	a = b;
-	b = tmp;
+	b = temp;
 }

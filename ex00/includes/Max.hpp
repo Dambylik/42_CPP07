@@ -6,15 +6,15 @@
 /*   By: okapshai <okapshai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 14:22:12 by okapshai          #+#    #+#             */
-/*   Updated: 2025/03/18 14:22:35 by okapshai         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:32:46 by okapshai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-template<typename T>
+template < typename T >
 
-T & max(T & a, T & b) {
+T const & max( T const & a, T const & b ) {
     
-	return a > b ? a : b;
+	return (a > b ? a : b);
 }

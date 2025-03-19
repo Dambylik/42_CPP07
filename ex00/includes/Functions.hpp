@@ -6,7 +6,7 @@
 /*   By: okapshai <okapshai@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/18 14:21:42 by okapshai          #+#    #+#             */
-/*   Updated: 2025/03/18 14:24:57 by okapshai         ###   ########.fr       */
+/*   Updated: 2025/03/19 12:34:30 by okapshai         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,4 @@
 #include "Colors.hpp"
 
 #include <iostream>
+#include <string>
